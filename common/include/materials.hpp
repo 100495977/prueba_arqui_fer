@@ -5,23 +5,23 @@
 #include <string>
 
 // Material mate - reflectancia RGB[2]
-struct MatteMaterial : public MaterialBase {
-  MaterialType type = MATTE_TYPE;
+struct MatteMaterial : public render::MaterialBase {
+  render::MaterialType type = render::MATTE_TYPE;
   std::string name;
   double reflectance_r, reflectance_g, reflectance_b;
 };
 
 // Material metálico - reflectancia + difusión [2]
-struct MetalMaterial : public MaterialBase {
-  MaterialType type = METAL_TYPE;
+struct MetalMaterial : public render::MaterialBase {
+  render::MaterialType type = render::METAL_TYPE;
   std::string name;
   double reflectance_r, reflectance_g, reflectance_b;
   double diffusion;
 };
 
 // Material refractivo - índice de refracción[2]
-struct RefractiveMaterial : public MaterialBase {
-  MaterialType type = REFRACTIVE_TYPE;
+struct RefractiveMaterial : public render::MaterialBase {
+  render::MaterialType type = render::REFRACTIVE_TYPE;
   std::string name;
   double refractive_index;
 };

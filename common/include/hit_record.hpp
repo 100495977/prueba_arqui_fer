@@ -18,14 +18,14 @@ namespace render {
     // vector normal a la superficie de un objeto
     normal_vector normal;
     // distancia donde se produce la intersección del origen del rayo
-    double t;
+    double t{};
     // indica si el rayo golpea la cara frontal
-    bool front_face;
+    bool front_face{};
     // puntero al material del objeto golpeado
-    MaterialBase const * mat_pointer;
+    MaterialBase const * mat_pointer{};
 
     // función para ajustar la normal (necesaria para refracción)
-    inline void set_face_normal(ray const & r, normal_vector const & outward_normal) {
+    void set_face_normal(ray const & r, normal_vector const & outward_normal) {
       // si el dot product es negativo el rayo va contra la normal
       front_face = dot(r.dir, outward_normal) < 0;
       // la normal siempre apunta hacia afuera del rayo incidente

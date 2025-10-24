@@ -1,0 +1,5 @@
+matte: suelo 0.8 0.8 0.8
+metal: metal_rojo 0.8 0.3 0.3 0.5
+
+sphere: 0 0 0 1 metal_rojo
+sphere: 2 0 0 0.7 suelo

@@ -1,5 +1,5 @@
-#include "hittable.hpp"
-#include "geometry_logic.hpp"
+#include "../include/hittable.hpp"
+#include "../include/geometry_logic.hpp"
 
 namespace render {
 
@@ -16,7 +16,7 @@ namespace render {
     // iterar sobre todos los objetos de la escena
     for (auto const & object : objects) {
       // llamamos a la función general hit_object en object_logic.hpp
-      if (geometry_logic::hit_object(r, t_min, closest_so_far, temp_rec, object)) {
+      if (hit_object(r, std::array<double, 2>{t_min, closest_so_far}, temp_rec, object)) {
         // hay colisión
         // registrar el impacto
         hit_anything = true;

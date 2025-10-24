@@ -83,7 +83,8 @@
 						"ms-vscode.hexeditor",
 						"gruntfuggly.todo-tree",
 						"ms-vscode.test-adapter-converter",
-						"cschlosser.doxdocgen"
+						"cschlosser.doxdocgen",
+						"github.copilot"
 					]
 		}
 	}

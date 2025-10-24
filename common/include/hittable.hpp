@@ -2,10 +2,8 @@
 #define RENDER_HITTABLE_HPP
 
 #include "hit_record.hpp"
-#include "math_utilities.hpp"
 #include "object_base.hpp"
 #include "ray.hpp"
-#include <memory>
 #include <vector>
 
 namespace render {
@@ -14,6 +12,12 @@ namespace render {
   // posibles colisiones)
   class hittable {
   public:
+    hittable()                             = default;
+    hittable(hittable const &)             = default;
+    hittable & operator=(hittable const &) = default;
+    hittable(hittable &&)                  = default;
+    hittable & operator=(hittable &&)      = default;
+
     // llamamos a la clase hit, declarada en hittable.cpp
     virtual bool hit(ray const & r, double t_min, double t_max, hit_record & rec) const = 0;
     virtual ~hittable()                                                                 = default;
@@ -26,7 +30,7 @@ namespace render {
     std::vector<ObjectBase const *> objects;
 
     // lista de punteros
-    hittable_list() { }
+    hittable_list() = default;
 
     void clear() { objects.clear(); }
 
